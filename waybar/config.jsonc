@@ -11,34 +11,37 @@
     "layer": "top",       // Waybar at top layer
     "position": "top",    // Waybar position (top|bottom|left|right)
     "height": 30,         // Waybar height (to be removed for auto height)
-    "width": 1600,        // Waybar width
-    "spacing": 4,         // Gaps between modules (4px)
-    		          
+    "width": 1590,        // Waybar width
+    "spacing": 8,         // Gaps between modules (px)
+
+
 
 
     "modules-left": [
         "custom/exit",
         "custom/appmenu",
-        "custom/filemanager"
+        "custom/filemanager",
+	"custom/downloads",
+ 	"custom/browser"
     ],
 
 
     "modules-center": [
-        "hyprland/workspaces",
-        "dynamcMedia"
+        "hyprland/workspaces"
+        //"dynamcMedia"
     ],
 
 
     "modules-right": [
-        "custom/updates",
-        "disk",
-	"ram",
-	"cpu",
+        //"custom/updates",
+        "cpu",
+	"memory",
+	"disk",
 	"pulseaudio",
 	"bluetooth",
         "network",     
         "battery",
-	"meteoradar",
+	//"meteoradar",
         "clock"
         
     ],
@@ -52,16 +55,45 @@
     },
 
 
-//app launcher Thunar
+//app menu
+    "custom/appmenu":{
+	"format":"",
+	"on-click": "wofi --show drun",
+	"tooltip": false
+},
 
-//file manager Ranger  
+
+// downloads 
+    "custom/downloads":{
+	"format":"",
+	"on-click":"",
+ 	"tooltip": false
+},
+
+//file manager Ranger 
+    "custom/filemanager":{
+	"format":"",
+	"on-click":"thunar",
+	"tooltip": false
+},
+
+//browser 
+    "custom/browser":{
+	"format":"",
+	"on-click":"brave",
+	"tooltip":false
+
+},
+ 
+
+//calculatror    
 
 
 
 //----------------------- CENTER -----------------------
 
 //workspaces
-    "hyprland/workspaces" : {          //o wlr/workspaces
+    "hyprland/workspaces" : {         
         "on-click": "activate",
         "active-only": false,
         "all-outputs": true,
@@ -72,12 +104,11 @@
 			"default": ""
         },
         "persistent-workspaces": {
-             "*": 5
+             "*": 1
         }       
     },
 
-
-//dynamic island spotify video
+//dynamic island spotify video  
 
 //--------------------- RIGHT SIDE ---------------------
 
@@ -87,9 +118,9 @@
 //      "tooltip-format": "{}",
 //      "escape": true,
 //      "return-type": "json",       
-//      "exec": "~/dotfiles/scripts/updates.sh",
+//      "exec": "~/.config/scripts/updates.sh",
 //      "restart-interval": 60,
-//      "on-click": "alacritty -e ~/dotfiles/scripts/installupdates.sh",
+//      "on-click": "kitty -e ~/.config/scripts/installupdates.sh",
 //      "tooltip": false
 //  },
 
@@ -99,15 +130,17 @@
 //disk
     "disk": {
         "interval": 30,
-        "format": "Disk {}% ",
-        "path": "/",
+        "format": " {specific_used:0.2f}GiB ",
+        "unit":"GiB",
+	"path": "/",
         "on-click": "kitty -e htop"
     }, 
 
 
 //ram 
     "memory": {
-        "format": "/ Ram {}% ",
+        "interval" : 30,
+	"format": " {used:0.1f}G ",
         "on-click": "kitty -e htop"
     },
 
@@ -116,7 +149,7 @@
 
 //cpu
     "cpu": {
-        "format": "/ Cpu {usage}% ",
+        "format": " {}%",
         "on-click": "kitty -e htop"
     },
 
@@ -146,13 +179,13 @@
 
 
 //bluetooth
-//  "bluetooth": {
-//     "format-disabled": "",
-//      "format-off": "",
-//      "interval": 30,
-//      "on-click": "blueman-manager",
-//     "format-no-controller": ""
-//  },
+    "bluetooth": {
+       "format-disabled": "",
+        "format-off": "",
+        "interval": 30,
+        "on-click": "bluez",
+       "format-no-controller": ""
+    },
 
 
 //network
@@ -166,19 +199,19 @@
         "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50,
-        "on-click": "alacritty -e nmtui"
+        "on-click": "kitty -e nmtui"
     },
 
 //battery
     "battery": {
         "states": {
-            // "good": 95,
+            "good": 95,
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}   {capacity}%",
-        "format-charging": "  {capacity}%",
-        "format-plugged": "  {capacity}%",
+        "format": "{icon}{capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
         "format-alt": "{icon}  {time}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
@@ -193,9 +226,10 @@
 
 //clock
     "clock": {
-        // "timezone": "Europe/Rome",
+        "timezone": "Europe/Rome",
+	"format": "{:%H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "  {:%Y-%m-%d}"
     }
 
 
