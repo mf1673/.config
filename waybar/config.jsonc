@@ -22,14 +22,16 @@
         "custom/appmenu",
         "custom/filemanager",
 	"custom/downloads",
- 	"custom/browser"
-    ],
-
-
-    "modules-center": [
+ 	"custom/browser",
+	"custom/wallpaper",
         "hyprland/workspaces"
-        //"dynamcMedia"
     ],
+
+
+//    "modules-center": [
+//        
+//        //"dynamcMedia"
+//    ],
 
 
     "modules-right": [
@@ -88,7 +90,7 @@
 
 //calculatror    
 
-
+//wallpaper changer 
 
 //----------------------- CENTER -----------------------
 
@@ -199,7 +201,7 @@
         "tooltip-format-ethernet": "  {ifname} ({ipaddr}/{cidr})",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50,
-        "on-click": "kitty -e nmtui"
+        "on-click": "alacritty -e nmtui"
     },
 
 //battery

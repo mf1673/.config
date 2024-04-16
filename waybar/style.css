@@ -1,4 +1,4 @@
-ù/* __        __          _                  ____  _         _      
+/* __        __          _                  ____  _         _      
    \ \      / /_ _ _   _| |__   __ _ _ __  / ___|| |_ _   _| | ___ 
     \ \ /\ / / _` | | | | '_ \ / _` | '__| \___ \| __| | | | |/ _ \
      \ V  V / (_| | |_| | |_) | (_| | |     ___) | |_| |_| | |  __/
@@ -11,7 +11,7 @@
 
 /*---------------- Import Pywal Colors ---------------------------*/
 
-
+@define-color back-color rgba(255,0,0,0.34);
 
 
 
@@ -96,32 +96,35 @@ button:hover {
 /*----------------------------- Modules ----------------------------*/
 
 #clock {
-    background-color: #64727D;
+    background-color: @back-color;
     border-radius: 15px;
     padding: 2px 10px 2px 10px;
+    border: 1px solid #ffffff;
 
 
 }
 
 #bluetooth{
-    background-color:#002aff ;
+    background-color: @back-color;
     border-radius: 15px;
     padding: 2px 10px 2px 10px;
-    color: #ffffff;
+    border: 1px solid #ffffff;
 
 
 }
 
 #battery {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: @back-color;
     border-radius: 15px;
     padding: 2px 10px 2px 10px;
+    border: 1px solid #ffffff
 
 }
 #battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
+    background-color: @back-color;
+    border-radius: 15px;
+    padding: 2px 10px 2px 10px;
+    border: 1px solid #ffffff;
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
@@ -137,44 +140,48 @@ button:hover {
 
 
 #cpu {
-    background-color: #2ecc71;
+    background-color: @back-color;
     border-radius: 15px;
     padding: 2px 10px 2px 10px;
-    color: #ffffff;
+    border: 1px solid #ffffff;
 }
 
 #memory {
-    background-color: #9b59b6;
+    background-color: @back-color;
     border-radius: 15px;
     padding: 2px 10px 2px 10px;
+    border: 1px solid #ffffff;
 }
 
 #disk {
-    background-color: transparent;
+    background-color: @back-color;
     border-radius: 15px;
     padding: 2px 10px 2px 10px;
-    border: 2px solid #ffffff;
+    border: 1px solid #ffffff;
 
 }
 
 
 #network {
-    background-color: #2980b9;
+    background-color: @back-color;
     border-radius: 15px;
-    padding: 2px 10px 2px 10px;
-}
+    padding: 2px 10px 2px 10px; 
+    border: 1px solid #ffffff;
+ }
 
 #network.disconnected {
-    background-color: #f53c3c;
+    background-color: @back-color;
     border-radius: 15px;
-    padding: 2px 10px 2px 10px;
+    padding: 2px 10px 2px 10px;  
+    border: 1px solid #ffffff
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
+    background-color: @back-color;
     color: #ffffff;
     border-radius: 15px;
     padding: 2px 10px 2px 10px;
+    border: 1px solid #ffffff
 
 }
 
@@ -185,40 +192,40 @@ button:hover {
 
 
 #custom-exit{
-    background-color: transparent;
+    background-color: @back-color;
     color: #ffffff;
     border-radius: 15px;
     padding: 2px 8px 2px 8px;
-    border: 2px solid;
+    border: 1px solid;
 
 }
 #custom-appmenu{
-    background-color: transparent;
+    background-color: @back-color;
     color: #ffffff;
     border-radius: 15px;
     padding: 2px 8px 2px 8px;
-    border: 2px solid;
+    border: 1px solid;
 }
 #custom-filemanager{
-    background-color: transparent;
+    background-color: @back-color;
     color: #ffffff;
     border-radius: 15px;
     padding: 2px 8px 2px 8px;
-    border: 2px solid;
+    border: 1px solid;
 }
 #custom-downloads{
-    background-color: transparent;
+    background-color: @back-color;
     border-radius:15px;
     color: #ffffff;
     padding: 2px 8px 2px 8px;
-    border: 2px solid;
+    border: 1px solid;
 }
 #custom-browser{
-    background-color: transparent;
+    background-color: @back-color;
     color: #ffffff;
     border-radius: 15px;
     padding: 2px 8px 2px 8px;
-    border: 2px solid;
+    border: 1px solid;
 
 
 }

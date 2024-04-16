@@ -9,7 +9,9 @@
 #------------------------------------------------------------------
 
 
-#killall waybar
+killall waybar
+pkill waybar
+sleep 0.2
 
-#waybar  home/mf/.config/waybar/config & -s  home/mf/.config/waybar/style.css
+waybar -c $HOME/.config/waybar/config.jsonc -s $HOME/.config/waybar/style.css &
 
